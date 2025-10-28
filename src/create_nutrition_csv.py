@@ -1,0 +1,53 @@
+import pandas as pd
+
+# Define the complete nutrition dataset
+data = [
+    ["Biryani", 250, 35, 10, 8, 2, 1, 380, 40, 2.5, 8, 35, 200],
+    ["Poha", 158, 27, 3, 4, 2, 1.8, 200, 25, 0.9, 6, 25, 150],
+    ["Chapati", 120, 20, 4, 3, 0.3, 2, 120, 10, 1.2, 0, 22, 40],
+    ["Dal Makhani", 220, 22, 9, 12, 2, 5, 350, 45, 2.4, 4, 40, 150],
+    ["Dum Aloo", 200, 15, 5, 10, 2, 3, 330, 30, 1.5, 5, 35, 150],
+    ["Bhatura", 310, 45, 6, 10, 1, 1.5, 240, 20, 0.8, 0, 10, 100],
+    ["Kofta", 230, 16, 8, 12, 1, 2, 300, 40, 1.5, 5, 28, 150],
+    ["Butter Chicken", 290, 4, 20, 12, 1, 0, 420, 30, 1.0, 2, 25, 180],
+    ["Gulab Jamun", 340, 50, 6, 15, 40, 0.2, 150, 30, 0.5, 1, 8, 100],
+    ["Palak Paneer", 230, 10, 12, 15, 2, 2.5, 390, 270, 2.2, 12, 40, 150],
+    ["Naan", 260, 42, 7, 8, 1, 1, 300, 30, 0.9, 0, 18, 100],
+    ["Gajar Ka Halwa", 310, 35, 6, 15, 30, 1.5, 160, 80, 0.7, 4, 15, 120],
+    ["Jalebi", 310, 55, 2, 10, 35, 0.3, 95, 12, 0.3, 0, 2, 100],
+    ["Bhindi Masala", 120, 12, 3, 7, 3, 4, 240, 65, 1.0, 12, 20, 120],
+    ["Dal Tadka", 220, 18, 9, 10, 2, 6, 360, 45, 2.5, 5, 40, 150],
+    ["Paneer Butter Masala", 265, 10, 15, 18, 4, 1.5, 430, 320, 1.4, 6, 35, 150],
+    ["Kadai Paneer", 245, 12, 14, 15, 3, 2, 410, 290, 1.2, 7, 30, 150],
+    ["Chicken Tikka", 290, 5, 28, 17, 1, 0, 450, 20, 1.0, 2, 15, 120],
+    ["Karela Bharta", 160, 10, 4, 9, 2, 3.5, 310, 70, 1.5, 20, 25, 120],
+    ["Ghevar", 380, 42, 5, 20, 25, 0.5, 200, 50, 0.6, 1, 5, 100],
+]
+
+# Column names
+columns = [
+    "Dish name",
+    "Calories (kcal)",
+    "Carbohydrates (g)",
+    "Protein (g)",
+    "Fats (g)",
+    "Free Sugar (g)",
+    "Fibre (g)",
+    "Sodium (mg)",
+    "Calcium (mg)",
+    "Iron (mg)",
+    "Vitamin C (mg)",
+    "Folate (µg)",
+    "Serving Size (g)"
+]
+
+# Create DataFrame
+df = pd.DataFrame(data, columns=columns)
+
+# Save to CSV
+output_path = "../nutrition_lookup.csv"
+df.to_csv(output_path, index=False, encoding='utf-8-sig')
+
+print("✅ nutrition_lookup.csv created successfully!")
+print(f"💾 Saved to: {output_path}")
+print(f"📊 Total dishes: {len(df)}")
